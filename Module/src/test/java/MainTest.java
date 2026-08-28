@@ -9,4 +9,9 @@ class MainTest {
         assertEquals(45, Main.addSix(39));
     }
 
+    @Test
+    void addSeventeen() {
+        assertEquals(29, Main.addSeventeen(12));
+    }
+
 }
