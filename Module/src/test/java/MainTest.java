@@ -85,5 +85,10 @@ class MainTest {
     assertEquals("a e i o u", Main.decryptorLB("e i o u a"));
     }
 
+    @Test
+    void decrypterLB3() {
+        assertEquals("COLLIN", Main.decryptorLB("CULLON"));
+    }
+
 
 }

@@ -73,13 +73,25 @@ public class Main {
     //for every vowel in the string, swap it for the vowel in the left of it in the vowel rhyme ( a e i o u)
     public static String decryptorLB(String encryptedText) {
         char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        char[] upperVowels = {'A', 'E', 'I', 'O', 'U'};
         if(encryptedText.isEmpty()) return null;
+
+        //for lowercase
 
         encryptedText = encryptedText.replace(vowels[0], 'A');
         for(int i = 1; i < vowels.length; i++) {
             encryptedText = encryptedText.replace(vowels[i], vowels[i - 1]);
         }
         encryptedText = encryptedText.replace('A', vowels[4]);
+
+        //for uppercase
+        encryptedText = encryptedText.replace(upperVowels[0], '@');
+        for(int i = 1; i < upperVowels.length; i++) {
+            encryptedText = encryptedText.replace(upperVowels[i], upperVowels[i - 1]);
+        }
+
+        encryptedText = encryptedText.replace('@', vowels[4]);
+
         return encryptedText;
     }
 
